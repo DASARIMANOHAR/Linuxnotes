@@ -1,0 +1,245 @@
+
+=======================before to start====================================================== 
+lets know about terminals in windows
+
+Command Prompt (CMD):
+Basic tool used to run simple commands. It’s like a traditional command-line tool from MS-DOS days.
+
+PowerShell:
+Advanced tool designed for power users and automation. It can do everything CMD does and much more 
+— like controlling Windows settings, managing files, automating tasks, etc.
+
+======================================================================================================
+
+
+Linux is an open-source operating system (OS) based on Unix. It acts as a bridge between computer hardware and software.
+Like Windows or macOS, Linux helps your system run programs, manage files, and connect to devices.
+
+Key Features of Linux
+Open-source: Free to use, modify, and distribute.
+
+Secure: Has strong permissions and user control.
+
+Stable: Rarely crashes, even under heavy load.
+
+Multi-user: Supports multiple users at the same time.
+
+Customizable: You can change almost anything.
+
+📦 Popular Linux Distributions (Distros)
+Each Linux distro comes with its own tools and desktop environments:
+
+ubuntu – beginner-friendly
+Fedora 
+Debian
+CentOS
+Kali Linux
+
+🖥️ Where Linux is Used
+Servers (web, mail, database servers)
+
+Desktops and laptops
+
+Embedded systems (smart TVs, routers)
+
+Cloud platforms (AWS, Azure)
+
+Supercomputers and IoT devices
+
+
+
+WSL- windows sub system for Linux 
+wsl has 2 version
+
+WSL and WSL2
+
+WSL2 is updated version support wide range of activities
+
+WSL2 Advantage
+✅Real Linux Kernel 
+✅Full Compatibility
+✅Docker Support	
+✅Kubernetes Support 
+
+
+So to install wsl2 we need to enable virtual machine platform and windows sub system for Linux in our windows system
+
+after that install ubuntu and update it and check 
+wsl -d Ubuntu-24.04 run in command prompt
+
+open ubuntu 
+🧪 Basic Commands to Start
+sudo apt update && sudo apt upgrade -y  # Update system
+ls, cd, pwd, mkdir, touch, nano         # File operations
+
+
+Linux credentials
+user name: dasa_linux
+pass: server123
+
+
+
+Linux commands
+
+1. Using touch (creates an empty file)
+
+touch filename.txt
+➡️ This creates a new, empty file named filename.txt.
+
+2. Using echo (adds content to the file, if already file has text also it will modify )
+echo "Hello, world!" > file.txt
+➡️ This creates file.txt and writes "Hello, world!" inside it.
+
+3. Using cat (manual input)
+cat > newfile.txt
+Then type the content and press Ctrl + D to save and exit.
+to stop command press ctrl +c
+
+4. Using nano, vim, or vi (text editors)
+nano example.txt
+Type your content
+
+Press Ctrl + O to save
+
+Press Ctrl + X to exit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+clear   = use to clear the screen
+mkdir    = make directory
+rm -rf    =remove files or directory
+###
+Difference Between ls Options
+ls → shows only normal files.
+ls -a → shows all files (including hidden).
+ls -la → shows all files with details (permissions, owner, size, date).
+#####
+pwd   = present working directory
+cd    = change directory
+cd ..  = change directory to parent directory
+ls -ltr= shows the all permissions of files and when created
+
+touch  = is only to create a file
+vi or vim = is used to create and edit the file
+
+man  = is used to known about every command details
+
+history   = is used to know about what commands are used till now
+
+
+
+chmod  = is change modification command is used to grant permissions
+
+in simple format with number 
+4=read
+2=write
+1= execute
+
+suppose chmod 777 used 
+
+
+7                       7          7
+4+2+1                  4+2+1      4+2+1
+
+User (Owner)           Group      Others
+
+so above command chmod777 Everyone can read, write, execute → not safe, but sometimes used for testing.
+
+we have some more like 755 700 644 600 400
+
+Quick Memory Trick:
+
+7 = rwx (4+2+1)
+
+6 = rw- (4+2)
+
+5 = r-x (4+1)
+
+4 = r--
+
+0 = ---
+
+
+
+
+
+
+disk management
+
+nproc = is used to check the total no.of cpu 
+
+free -g = used to check the memory
+
+df -h  = is used to check the disk space
+
+top   = used to check all things 
+
+echo  =  is used to print the statement you want(like printf in c language or console.log in javascript)
+
+###############
+a small script of file.ssh 
+
+
+echo "print the cpu"
+nproc  
+
+####################
+run the file.ssh
+
+
+set -x  = is used to debug mode .simply it will show you the command that it is executing and print the output
+
+
+ps -ef  = used to check the details of all process
+
+ps -ef | grep "amazon"  = used to filter the process by using grep  
+
+|   = is pipe command basically sends output of first command to the second command
+ex: ps -ef | grep "amazon" 
+in above the all details of process  will execute for ps -ef then sends output to grep "amazon" 
+
+interview question
+
+date | echo "today is"
+
+what is output above script?
+
+
+ps -ef | grep "agetty" | awk -F" " '{print $4}'  = used to again filter with awk command take output from column specified
+ 
+
+ set -e  = used to exit the script when there is an error. suppose any errors exist but last command in the line is correct this command wont catch the error to overcome this below command is created(i.e set -e will not catch any pipe failures) 
+
+ set -o pipefail  = used to catch any pipe failures 
+
+
+
+curl URL.log | grep ERROR  = used to retrive errors in the logs
+
+
+wget URL.log  = is actullay download the logfile (dummyfile.log) 
+
+cat dummyfile.log | grep error
+
+interview question what is difference btw wget curl
+
+sudo  = use before any commands to have root previligies
+
+sudo su - username = means switch user 
+
+find / -name file1    = used to search over all files  of name file1
+
+
+interview qus
+trap    = traps the signals and perform execution onbehalf
