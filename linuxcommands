@@ -243,3 +243,76 @@ find / -name file1    = used to search over all files  of name file1
 
 interview qus
 trap    = traps the signals and perform execution onbehalf
+
+
+
+
+Linux commands
+
+top  = monitor system performance like active process Real time info
+
+htop = same as top command but better readability
+
+
+ps = running process with id . it is not realtime  
+
+ps aux = use to fetch about a specific process
+
+pgrep nginx
+
+ps aux | grep nginx
+
+pstree -p = can view hierarchy of all process
+
+netstat -tuln = to check which ports are have active connection
+
+tupdump  = to check the late response from application . it will capture and analyze network packets for diagnosising issues.network troubleshooting
+sudo tcpdumv -i ens5 port 80
+
+ifconfig = will give you info primary network interface, when you create Linux instances enXoq , if others eth0
+
+tcpdump -i ens5 = gives the all network packets info of your primary network interface
+
+ping google.com = use to check response time from the destination address mentioned(google.com)
+
+trace route = give all information details till endpoint of server
+
+du -sh directory name = is used to check the storage of the directory(disk utilization)
+
+
+free -h = to check memory utilization
+
+
+when your dealing with services , to check the logs of runnings services
+journalctl = gives you complete logs of services 
+
+if want to check for specific service 
+journalctl -u nginx
+
+
+journalctl -b = use chatgtp
+
+
+netstat -tuln to check active runnings ports 
+below command check the process running in the port
+lsof -i :53  
+abbreviation of lsof =list of open file
+
+
+tail = is command to check the loglines in logfile ,to read the log file like first/last 10 logs lines  let take example
+
+sudo tail -n 10 /var/log/auth.log
+
+output: it will gives you last 10 lines of the log file
+
+sudo head -n 10 /var/log/auth.log
+
+
+shortcuts
+
+history command is used to check all used commands by you
+
+
+crtl+r = it performs reverse search and search for command you want  
+
+
