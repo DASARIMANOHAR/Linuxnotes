@@ -243,3 +243,6 @@ find / -name file1    = used to search over all files  of name file1
 
 interview qus
 trap    = traps the signals and perform execution onbehalf
+
+
+locally changed some text from windows
